@@ -1,0 +1,5 @@
+Add the following approved files to this public folder before deployment:
+- royalt-logo.png
+- royal-headshot.jpg
+
+The site shows graceful placeholders if either file is missing.
