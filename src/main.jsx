@@ -3,7 +3,7 @@ import {createRoot} from 'react-dom/client';
 import {Menu, X, ArrowRight, CheckCircle2, ShieldCheck, BriefcaseBusiness, Cloud, Users, Laptop, FileCheck2} from 'lucide-react';
 import './styles.css';
 
-const BOOKINGS_URL='https://outlook.office.com/bookings/'; // Replace with your published Microsoft Bookings URL
+const BOOKINGS_URL = "https://bookings.cloud.microsoft/bookwithme/user/ec1652782463412ea71cfe0795708149@royaltenterprise.com?anonymous&ismsaljsauthenabled";
 const services=[
  {icon:BriefcaseBusiness,title:'Fractional CIO Services',kicker:'Executive Technology Leadership',summary:'Strategic direction, governance, financial oversight, and executive guidance without the cost of a full-time CIO.',items:['Technology roadmaps','IT budgeting and governance','Vendor oversight','Executive reporting']},
  {icon:Cloud,title:'Microsoft 365 Management',kicker:'Secure Cloud Productivity',summary:'Administration, governance, optimization, and support for a secure and usable Microsoft 365 environment.',items:['Entra ID administration','Exchange Online','SharePoint and OneDrive','License optimization']},
