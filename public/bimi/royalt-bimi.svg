@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 600 600">
+
+  <defs>
+    <linearGradient id="blue"
+                    x1="0%"
+                    y1="0%"
+                    x2="0%"
+                    y2="100%">
+      <stop offset="0%"
+            stop-color="#0A5CFF"/>
+      <stop offset="100%"
+            stop-color="#002B7F"/>
+    </linearGradient>
+
+    <linearGradient id="gold"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%">
+      <stop offset="0%"
+            stop-color="#FFD86B"/>
+      <stop offset="100%"
+            stop-color="#D4A017"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Crown -->
+  <g transform="translate(150,30)">
+    <path d="M0 70
+             L40 10
+             L90 55
+             L140 0
+             L190 55
+             L240 10
+             L280 70
+             Z"
+          fill="url(#gold)"
+          stroke="#B8860B"
+          stroke-width="4"/>
+
+    <circle cx="40" cy="10" r="10" fill="#FFD86B"/>
+    <circle cx="140" cy="0" r="10" fill="#FFD86B"/>
+    <circle cx="240" cy="10" r="10" fill="#FFD86B"/>
+  </g>
+
+  <!-- R -->
+  <path d="
+  M105 180
+  L105 450
+  L165 450
+  L165 350
+  L220 350
+  L280 450
+  L345 450
+  L265 330
+  C310 315 335 280 335 235
+  C335 180 295 145 225 145
+  L105 145
+  Z
+
+  M165 200
+  L220 200
+  C255 200 275 215 275 240
+  C275 265 255 285 220 285
+  L165 285
+  Z"
+  fill="url(#blue)"/>
+
+  <!-- T -->
+  <path d="
+  M330 145
+  L550 145
+  L550 205
+  L475 205
+  L475 450
+  L405 450
+  L405 205
+  L330 205
+  Z"
+  fill="url(#blue)"/>
+
+  <!-- Gold swoosh -->
+  <path d="
+  M40 410
+  C120 360 220 350 380 335
+  C300 395 190 450 55 465
+  C190 460 345 405 520 300
+  "
+  fill="none"
+  stroke="url(#gold)"
+  stroke-width="20"
+  stroke-linecap="round"/>
+
+</svg>
