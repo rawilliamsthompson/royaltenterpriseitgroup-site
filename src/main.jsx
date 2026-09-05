@@ -189,7 +189,6 @@ function Footer({ go }) {
             <Linkedin size={20} aria-hidden="true" />
       </div>
     </footer>
-    </div>
         {footerLinks.map((item) => (
           <button
             key={item}
