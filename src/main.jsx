@@ -42,7 +42,7 @@ const go = (p) => {
     behavior: 'smooth'
   });
 };
-const <button onClick={() => window.open(BOOKINGS_URL, "_blank")}>
+const <button onClick={() => window.open(BOOKINGS_URL, "//bookings.cloud.microsoft/bookwithme/user/ec1652782463412ea71cfe0795708149%40royaltenterprise.com?anonymous&ismsaljsauthenabled")}>
   Schedule a Consultation
 </button>
  return <div><header><button className="brand" onClick={()=>go('Home')}><img src="/royalt-logo.png" onError={e=>e.currentTarget.style.display='none'} alt="RoyalT Enterprise IT Group logo"/><span><b>RoyalT Enterprise IT Group</b><small>Strategic IT Solutions that Scale with Your Business</small></span></button><nav>{nav.map(n=><button className={page===n?'active':''} onClick={()=>go(n)} key={n}>{n}</button>)}<button className="gold" onClick={booking}>Schedule a Consultation</button></nav><button className="mobile" onClick={()=>setMenu(!menu)} aria-label="Toggle navigation">{menu?<X/>:<Menu/>}</button></header>{menu&&<div className="mobilemenu">{nav.map(n=><button onClick={()=>go(n)} key={n}>{n}</button>)}</div>}<main>{page==='Home'?<Home go={go} booking={booking}/>:page==='About'?<About booking={booking}/>:page==='Services'?<Services booking={booking}/>:page==='Industries'?<Industries booking={booking}/>:page==='Resources'?<Resources go={go}/>:page==='Insights'?<Insights/>:<Contact booking={booking}/>}</main><Footer go={go}/></div>
