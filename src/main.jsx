@@ -220,7 +220,7 @@ function Footer({ go }) {
       <div>
         <p>Georgetown, Texas</p>
 
-        <a href="mailto:rwilliamsthompson@royaltenterprise.com">
+        <a "mailto:rwilliamsthompson@royaltenterprise.com">
           rwilliamsthompson@royaltenterprise.com
         </a>
 
