@@ -17,8 +17,7 @@ import {
 
 import './styles.css';
 
-const BOOKINGS_URL =
-  'https://bookings.cloud.microsoft/bookwithme/user/ec1652782463412ea71cfe0795708149@royaltenterprise.com?anonymous&ismsaljsauthenabled';
+const go = (p) => {
 
 const LINKEDIN_URL =
   'https://www.linkedin.com/company/royalt-enterprise-it-group';
@@ -45,7 +44,8 @@ const go = (p) => {
     behavior: 'smooth'
   });
 };
- const booking=()=>window.open(BOOKINGS_URL,'_blank','noopener,noreferrer');
+const booking = () =>
+  window.open(BOOKINGS_URL, "_blank", "noopener,noreferrer");
  return <div><header><button className="brand" onClick={()=>go('Home')}><img src="/royalt-logo.png" onError={e=>e.currentTarget.style.display='none'} alt="RoyalT Enterprise IT Group logo"/><span><b>RoyalT Enterprise IT Group</b><small>Strategic IT Solutions that Scale with Your Business</small></span></button><nav>{nav.map(n=><button className={page===n?'active':''} onClick={()=>go(n)} key={n}>{n}</button>)}<button className="gold" onClick={booking}>Schedule a Consultation</button></nav><button className="mobile" onClick={()=>setMenu(!menu)} aria-label="Toggle navigation">{menu?<X/>:<Menu/>}</button></header>{menu&&<div className="mobilemenu">{nav.map(n=><button onClick={()=>go(n)} key={n}>{n}</button>)}</div>}<main>{page==='Home'?<Home go={go} booking={booking}/>:page==='About'?<About booking={booking}/>:page==='Services'?<Services booking={booking}/>:page==='Industries'?<Industries booking={booking}/>:page==='Resources'?<Resources go={go}/>:page==='Insights'?<Insights/>:<Contact booking={booking}/>}</main><Footer go={go}/></div>
 }
 function Hero({booking,go}){return <section className="hero"><div><span className="pill">Fractional CIO • Microsoft 365 • IT Governance</span><h1>Strategic technology leadership that <em>scales with your business.</em></h1><p>RoyalT helps growing organizations strengthen technology strategy, security, governance, workforce operations, and Microsoft 365 through practical executive guidance.</p><div className="actions"><button className="gold" onClick={booking}>Schedule a Consultation</button><button className="outline" onClick={()=>go('Services')}>Explore Services</button></div></div><div className="logoPanel"><img src="/royalt-logo.png" onError={e=>{e.currentTarget.style.display='none';e.currentTarget.nextSibling.style.display='block'}} alt="RoyalT Enterprise IT Group logo"/><div className="logoFallback">RoyalT<br/><small>Enterprise IT Group</small></div></div></section>}
@@ -76,53 +76,89 @@ function Footer({ go }) {
      <div className="socialLinks">
   <a
     href="https://www.facebook.com/people/RoyalT-Enterprise"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Facebook
+   <Facebook size={20} />
+</a>
   </a>
 
   https://www.linkedin.com/company/royalt-enterprise-it-group
-    LinkedIn
-  </a>
-</div>
-      <div>
-        {[
-          'About',
-          'Services',
-          'Industries',
-          'Resources',
-          'Contact'
-        ].map((item) => (
-          <button
-            key={item}
-            onClick={() => go(item)}
-          >
-            {item}
-          </button>
-        ))}
-      </div>
-
-      <div>
-        <p>Georgetown, Texas</p>
-
-        rwilliamsthompson@royaltenterprise.com
-          rwilliamsthompson@royaltenterprise.com
-        </a>
-<a
-  href={BOOKINGS_URL}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="footerBooking"
->
-  Schedule a Consultation
+    <Linkedin size={20} />
+18
 </a>
-      </div>
-
-      <small>
-        © 2026 RoyalT Enterprise IT Group, LLC. All rights reserved.
-      </small>
-    </footer>
-  );
-}
-createRoot(document.getElementById('root')).render(<App/>);
+19
+</div>
+20
+</div>
+21
+ 
+22
+<div>
+23
+{[
+24
+"About",
+25
+"Services",
+26
+"Industries",
+27
+"Resources",
+28
+"Contact"
+29
+].map((item) => (
+30
+<button
+31
+key={item}
+32
+onClick={() => go(item)}
+33
+>
+34
+{item}
+35
+</button>
+36
+))}
+37
+</div>
+38
+ 
+39
+<div>
+40
+<p>Georgetown, Texas</p>
+41
+ 
+42
+<a href="mailto:rwilliamsthompson@royaltenterprise.com">
+43
+rwilliamsthompson@royaltenterprise.com
+44
+</a>
+45
+ 
+46
+{BOOKINGS_URL}
+47
+Schedule a Consultation
+48
+</a>
+49
+</div>
+50
+ 
+51
+<small>
+52
+© 2026 RoyalT Enterprise IT Group, LLC.
+53
+All rights reserved.
+54
+</small>
+55
+</footer>
+56
+);
+57
+}createRoot(document.getElementById('root')).render(<App/>);
