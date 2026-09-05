@@ -240,4 +240,4 @@ function Footer({ go }) {
     </footer>
   );
 }
-}createRoot(document.getElementById('root')).render(<App/>);
+}createRoot(document.getElementById("root")).render(<App />);
