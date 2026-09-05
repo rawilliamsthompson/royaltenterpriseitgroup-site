@@ -183,14 +183,13 @@ function Footer({ go }) {
         <div className="socialLinks">
           {FACEBOOK_URL}
             <Facebook size={20} aria-hidden="true" />
-        </a>
+        </div>
 
           {LINKEDIN_URL}
             <Linkedin size={20} aria-hidden="true" />
-        </a>
       </div>
-
-      <div>
+    </footer>
+    </div>
         {footerLinks.map((item) => (
           <button
             key={item}
@@ -202,7 +201,7 @@ function Footer({ go }) {
         ))}
       </div>
 
-      <div>
+      </div>
         <p>Georgetown, Texas</p>
 
         <a href="mailto:rwilliamsthompson@royaltenterprise.com">
