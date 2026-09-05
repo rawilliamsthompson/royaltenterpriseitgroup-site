@@ -74,8 +74,7 @@ function Footer({ go }) {
         </p>
 
      <div className="socialLinks">
-  <a
-    href="https://www.facebook.com/people/RoyalT-Enterprise"
+  <a "https://www.facebook.com/people/RoyalT-Enterprise"
    <Facebook size={20} />
 </a>
 
@@ -83,8 +82,6 @@ function Footer({ go }) {
     <Linkedin size={20} />
 </a>
 </div>
-</div>
-<div>
 {[
 "About",
 "Services",
