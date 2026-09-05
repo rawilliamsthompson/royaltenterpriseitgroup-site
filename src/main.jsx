@@ -16,8 +16,7 @@ import {
 } from 'lucide-react';
 import './styles.css';
 const BOOKINGS_URL =
-  "https:" +
-  "//bookings.cloud.microsoft/bookwithme/user/ec1652782463412ea71cfe0795708149%40royaltenterprise.com?anonymous&ismsaljsauthenabled";
+  "https://bookings.cloud.microsoft/bookwithme/user/ec1652782463412ea71cfe0795708149%40royaltenterprise.com?anonymous&ismsaljsauthenabled";
 const FACEBOOK_URL =
   "https://www.facebook.com/people/RoyalT-Enterprise/61592690595304/";
 
@@ -32,17 +31,23 @@ const services = [
  {icon:FileCheck2,title:'IT Governance & Risk Management',kicker:'Policies & Accountability',summary:'Practical policies, assessments, standards, and reporting connected to business responsibility.',items:['IT risk assessments','Security policies','Continuity planning','Executive action plans']}
 ];
 const nav=['Home','About','Services','Industries','Resources','Insights','Contact'];
-function App(){
- const [page,setPage]=useState('Home'); const [menu,setMenu]=useState(false);
-const go = (p) => {
-  setPage(p);
-  setMenu(false);
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-};
-</button>
+function App() {
+  const [page, setPage] = useState("Home");
+  const [menu, setMenu] = useState(false);
+
+  const go = (p) => {
+    setPage(p);
+    setMenu(false);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
+  const booking = () => {
+    window.open(BOOKINGS_URL, "_blank", "noopener,noreferrer");
+  };
  return <div><header><button className="brand" onClick={()=>go('Home')}><img src="/royalt-logo.png" onError={e=>e.currentTarget.style.display='none'} alt="RoyalT Enterprise IT Group logo"/><span><b>RoyalT Enterprise IT Group</b><small>Strategic IT Solutions that Scale with Your Business</small></span></button><nav>{nav.map(n=><button className={page===n?'active':''} onClick={()=>go(n)} key={n}>{n}</button>)}<button className="gold" onClick={booking}>Schedule a Consultation</button></nav><button className="mobile" onClick={()=>setMenu(!menu)} aria-label="Toggle navigation">{menu?<X/>:<Menu/>}</button></header>{menu&&<div className="mobilemenu">{nav.map(n=><button onClick={()=>go(n)} key={n}>{n}</button>)}</div>}<main>{page==='Home'?<Home go={go} booking={booking}/>:page==='About'?<About booking={booking}/>:page==='Services'?<Services booking={booking}/>:page==='Industries'?<Industries booking={booking}/>:page==='Resources'?<Resources go={go}/>:page==='Insights'?<Insights/>:<Contact booking={booking}/>}</main><Footer go={go}/></div>
 }
 function Hero({booking,go}){return <section className="hero"><div><span className="pill">Fractional CIO • Microsoft 365 • IT Governance</span><h1>Strategic technology leadership that <em>scales with your business.</em></h1><p>RoyalT helps growing organizations strengthen technology strategy, security, governance, workforce operations, and Microsoft 365 through practical executive guidance.</p><div className="actions"><button className="gold" onClick={booking}>Schedule a Consultation</button><button className="outline" onClick={()=>go('Services')}>Explore Services</button></div></div><div className="logoPanel"><img src="/royalt-logo.png" onError={e=>{e.currentTarget.style.display='none';e.currentTarget.nextSibling.style.display='block'}} alt="RoyalT Enterprise IT Group logo"/><div className="logoFallback">RoyalT<br/><small>Enterprise IT Group</small></div></div></section>}
