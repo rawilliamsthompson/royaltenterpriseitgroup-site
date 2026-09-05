@@ -78,7 +78,6 @@ function Footer({ go }) {
     href="https://www.facebook.com/people/RoyalT-Enterprise"
    <Facebook size={20} />
 </a>
-  </a>
 
   https://www.linkedin.com/company/royalt-enterprise-it-group
     <Linkedin size={20} />
