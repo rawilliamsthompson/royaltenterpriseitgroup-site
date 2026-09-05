@@ -73,15 +73,17 @@ function Footer({ go }) {
           Strategic IT Solutions that Scale with Your Business
         </p>
 
-      <div className="socialLinks">
+     <div className="socialLinks">
   <a
     href="https://www.facebook.com/people/RoyalT-Enterprise"
-    ={22} />
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Facebook
   </a>
 
-  <a
-    href="https://www.linkedin.com/company/rise-it-group
-    <Linkedin size={22} />
+  https://www.linkedin.com/company/royalt-enterprise-it-group
+    LinkedIn
   </a>
 </div>
       <div>
