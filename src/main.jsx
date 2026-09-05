@@ -12,7 +12,8 @@ import {
   Laptop,
   FileCheck2,
   Facebook,
-  Linkedin
+  Linkedin,
+  ...
 } from 'lucide-react';
 import './styles.css';
 const BOOKINGS_URL =
@@ -180,11 +181,11 @@ function Footer({ go }) {
         <div className="socialLinks">
           {FACEBOOK_URL}
             <Facebook size={20} aria-hidden="true" />
-        </div>
+        </a>
 
           {LINKEDIN_URL}
             <Linkedin size={20} aria-hidden="true" />
-        </div>
+        </a>
       </div>
 
       <div>
