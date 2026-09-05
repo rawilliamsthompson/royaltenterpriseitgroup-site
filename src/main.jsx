@@ -51,5 +51,62 @@ function Insights(){return <><PageHero k="Insights" t="Through Fractional CIO se
 function Contact({booking}){const [sent,setSent]=useState(false);return <><PageHero k="Contact RoyalT" t="Let’s strengthen your technology strategy."/><section className="contact"><aside><h2>Start a conversation.</h2><p>The first step is understanding your organization, priorities, and desired outcome.</p><b>Email</b><a href="mailto:rwilliamsthompson@royaltenterprise.com">rwilliamsthompson@royaltenterprise.com</a><b>Service Area</b><p>Georgetown, Texas and remote engagements</p><button className="gold" onClick={booking}>Book a Consultation</button></aside>{sent?<div className="form"><h2>Thank you for contacting RoyalT.</h2><p>This demo confirms the form experience. Connect the production form to Power Automate or an approved secure form service.</p></div>:<form className="form" onSubmit={e=>{e.preventDefault();setSent(true)}}><h2>Consultation request</h2>{['Full name','Organization','Business email','Phone'].map(x=><label key={x}>{x}<input required type={x.includes('email')?'email':'text'}/></label>)}<label>Service interest<select required><option value="">Select a service</option>{services.map(x=><option key={x.title}>{x.title}</option>)}</select></label><label>How can we help?<textarea required rows="5"/></label><button className="primary">Submit Consultation Request</button><small>Prototype form. Connect a secure form processor before launch.</small></form>}</section></>}
 function PageHero({k,t}){return <section className="pageHero"><span className="eyebrow">{k}</span><h1>{t}</h1><p>RoyalT Enterprise IT Group provides practical, business-focused technology guidance for growing organizations.</p></section>}
 function CTA({booking}){return <section className="cta"><div><span className="eyebrow">Let’s Talk</span><h2>Ready to bring clarity and control to your technology environment?</h2></div><button className="gold" onClick={booking}>Schedule a Consultation</button></section>}
-function Footer({go}){return <footer><div><b>RoyalT Enterprise IT Group, LLC</b><p>Strategic IT Solutions that Scale with Your Business</p></div><div>{['About','Services','Industries','Resources','Contact'].map(x=><button key={x} onClick={()=>go(x)}>{x}</button>)}</div><div><p>Georgetown, Texas</p><a href="mailto:rwilliamsthompson@royaltenterprise.com">rwilliamsthompson@royaltenterprise.com</a></div><small>© 2026 RoyalT Enterprise IT Group, LLC. All rights reserved.</small></footer>}
+function Footer({ go }) {
+  return (
+    <footer>
+      <div>
+        <b>RoyalT Enterprise IT Group, LLC</b>
+
+        <p>
+          Strategic IT Solutions that Scale with Your Business
+        </p>
+
+        <div className="socialLinks">
+          {FACEBOOK_URL}
+            <Facebook size={22} aria-hidden="true" />
+          </a>
+
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+ " />
+          </a>
+        </div>
+      </div>
+
+      <div>
+        {[
+          'About',
+          'Services',
+          'Industries',
+          'Resources',
+          'Contact'
+        ].map((item) => (
+          <button
+            key={item}
+            onClick={() => go(item)}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
+
+      <div>
+        <p>Georgetown, Texas</p>
+
+        rwilliamsthompson@royaltenterprise.com
+          rwilliamsthompson@royaltenterprise.com
+        </a>
+
+        {BOOKINGS_URL}
+          Schedule a Consultation
+        </a>
+      </div>
+
+      <small>
+        © 2026 RoyalT Enterprise IT Group, LLC. All rights reserved.
+      </small>
+    </footer>
+  );
+}
 createRoot(document.getElementById('root')).render(<App/>);
