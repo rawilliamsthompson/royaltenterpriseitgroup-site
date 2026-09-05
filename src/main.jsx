@@ -20,11 +20,17 @@ import './styles.css';
 const BOOKINGS_URL =
   'https://bookings.cloud.microsoft/bookwithme/user/ec1652782463412ea71cfe0795708149@royaltenterprise.com?anonymous&ismsaljsauthenabled';
 
-const LINKEDIN_URL =
-  'https://www.linkedin.com/company/royalt-enterprise-it-group';
+<div className="socialLinks">
 
-const FACEBOOK_URL =
-  'https://www.facebook.com/people/RoyalT-Enterprise';
+  {FACEBOOK_URL}
+    <Facebook size={22} />
+  </a>
+
+  {LINKEDIN_URL}
+    <Linkedin size={22} />
+  </a>
+
+</div>;
 const services=[
  {icon:BriefcaseBusiness,title:'Fractional CIO Services',kicker:'Executive Technology Leadership',summary:'Strategic direction, governance, financial oversight, and executive guidance without the cost of a full-time CIO.',items:['Technology roadmaps','IT budgeting and governance','Vendor oversight','Executive reporting']},
  {icon:Cloud,title:'Microsoft 365 Management',kicker:'Secure Cloud Productivity',summary:'Administration, governance, optimization, and support for a secure and usable Microsoft 365 environment.',items:['Entra ID administration','Exchange Online','SharePoint and OneDrive','License optimization']},
@@ -36,7 +42,7 @@ const services=[
 const nav=['Home','About','Services','Industries','Resources','Insights','Contact'];
 function App(){
  const [page,setPage]=useState('Home'); const [menu,setMenu]=useState(false);
- const go=p=>{setPage(p);setMenu(false);window.scrollTo({top:0,behavior:'smooth'})};
+const go = p => {;setMenu(false);window.scrollTo({top:0,behavior:'smooth'})};
  const booking=()=>window.open(BOOKINGS_URL,'_blank','noopener,noreferrer');
  return <div><header><button className="brand" onClick={()=>go('Home')}><img src="/royalt-logo.png" onError={e=>e.currentTarget.style.display='none'} alt="RoyalT Enterprise IT Group logo"/><span><b>RoyalT Enterprise IT Group</b><small>Strategic IT Solutions that Scale with Your Business</small></span></button><nav>{nav.map(n=><button className={page===n?'active':''} onClick={()=>go(n)} key={n}>{n}</button>)}<button className="gold" onClick={booking}>Schedule a Consultation</button></nav><button className="mobile" onClick={()=>setMenu(!menu)} aria-label="Toggle navigation">{menu?<X/>:<Menu/>}</button></header>{menu&&<div className="mobilemenu">{nav.map(n=><button onClick={()=>go(n)} key={n}>{n}</button>)}</div>}<main>{page==='Home'?<Home go={go} booking={booking}/>:page==='About'?<About booking={booking}/>:page==='Services'?<Services booking={booking}/>:page==='Industries'?<Industries booking={booking}/>:page==='Resources'?<Resources go={go}/>:page==='Insights'?<Insights/>:<Contact booking={booking}/>}</main><Footer go={go}/></div>
 }
@@ -48,7 +54,11 @@ function Services({booking}){return <><PageHero k="Services" t="Strategic leader
 function Industries({booking}){let data=[['Healthcare & Healthcare Administration','Governance for sensitive information, distributed teams, EHR access, payer portals, and workforce lifecycle processes.'],['Professional Services','Secure collaboration, onboarding, vendor oversight, and technology planning.'],['Growing Businesses','Fractional leadership for organizations that have outgrown informal IT decisions.'],['Mission-Driven Organizations','Practical governance, budgeting, security, and productivity guidance.']];return <><PageHero k="Industries" t="Technology guidance shaped by operational realities."/><section className="section"><div className="grid industries">{data.map((x,i)=><article className="card" key={x[0]}><small>0{i+1}</small><h3>{x[0]}</h3><p>{x[1]}</p></article>)}</div></section><CTA booking={booking}/></>}
 function Resources({go}){return <><PageHero k="Client Resources" t="Practical tools for stronger technology decisions."/><section className="section"><div className="grid">{['Technology Readiness Checklist','New User Access Planning Guide','IT Risk Discussion Guide'].map(x=><article className="card" key={x}><small>RESOURCE</small><h3>{x}</h3><p>Request this resource to begin a structured conversation about technology risk, ownership, and priorities.</p><button onClick={()=>go('Contact')}>Request resource <ArrowRight size={17}/></button></article>)}</div></section></>}
 function Insights(){return <><PageHero k="Insights" t="Through Fractional CIO services and trusted advisory support, Royal partners with business leaders to develop scalable technology strategies, manage vendor relationships, optimize workforce technology platforms, and establish effective governance practices that support sustainable growth."/><section className="section"><div className="grid">{[['Identity & Access','Why individual accounts and MFA matter'],['Technology Governance','When growing businesses need Fractional CIO leadership'],['Microsoft 365','Turning Microsoft 365 into a governed platform']].map(x=><article className="card" key={x[1]}><small>{x[0]}</small><h3>{x[1]}</h3><p>Executive guidance designed to connect technology decisions with security, accountability, and business outcomes.</p></article>)}</div></section></>}
-function Contact({booking}){const [sent,setSent]=useState(false);return <><PageHero k="Contact RoyalT" t="Let’s strengthen your technology strategy."/><section className="contact"><aside><h2>Start a conversation.</h2><p>The first step is understanding your organization, priorities, and desired outcome.</p><b>Email</b><a href="mailto:rwilliamsthompson@royaltenterprise.com">rwilliamsthompson@royaltenterprise.com</a><b>Service Area</b><p>Georgetown, Texas and remote engagements</p><button className="gold" onClick={booking}>Book a Consultation</button></aside>{sent?<div className="form"><h2>Thank you for contacting RoyalT.</h2><p>This demo confirms the form experience. Connect the production form to Power Automate or an approved secure form service.</p></div>:<form className="form" onSubmit={e=>{e.preventDefault();setSent(true)}}><h2>Consultation request</h2>{['Full name','Organization','Business email','Phone'].map(x=><label key={x}>{x}<input required type={x.includes('email')?'email':'text'}/></label>)}<label>Service interest<select required><option value="">Select a service</option>{services.map(x=><option key={x.title}>{x.title}</option>)}</select></label><label>How can we help?<textarea required rows="5"/></label><button className="primary">Submit Consultation Request</button><small>Prototype form. Connect a secure form processor before launch.</small></form>}</section></>}
+function Contact({booking}){const [sent,setSent]=useState(false);return <><PageHero k="Contact RoyalT" t="Let’s strengthen your technology strategy."/><section className="contact"><aside><h2>Start a conversation.</h2><p>The first step is understanding your organization, priorities, and desired outcome.</p><b>Email</b><a
+  href="mailto:rwilliamsthompson@royaltenterprise.com"
+>
+  rwilliamsthompson@royaltenterprise.com
+</a><b>Service Area</b><p>Georgetown, Texas and remote engagements</p><button className="gold" onClick={booking}>Book a Consultation</button></aside>{sent?<div className="form"><h2>Thank you for contacting RoyalT.</h2><p>This demo confirms the form experience. Connect the production form to Power Automate or an approved secure form service.</p></div>:<form className="form" onSubmit={e=>{e.preventDefault();setSent(true)}}><h2>Consultation request</h2>{['Full name','Organization','Business email','Phone'].map(x=><label key={x}>{x}<input required type={x.includes('email')?'email':'text'}/></label>)}<label>Service interest<select required><option value="">Select a service</option>{services.map(x=><option key={x.title}>{x.title}</option>)}</select></label><label>How can we help?<textarea required rows="5"/></label><button className="primary">Submit Consultation Request</button><small>Prototype form. Connect a secure form processor before launch.</small></form>}</section></>}
 function PageHero({k,t}){return <section className="pageHero"><span className="eyebrow">{k}</span><h1>{t}</h1><p>RoyalT Enterprise IT Group provides practical, business-focused technology guidance for growing organizations.</p></section>}
 function CTA({booking}){return <section className="cta"><div><span className="eyebrow">Let’s Talk</span><h2>Ready to bring clarity and control to your technology environment?</h2></div><button className="gold" onClick={booking}>Schedule a Consultation</button></section>}
 function Footer({ go }) {
@@ -61,17 +71,17 @@ function Footer({ go }) {
           Strategic IT Solutions that Scale with Your Business
         </p>
 
-        <div className="socialLinks">
-          {FACEBOOK_URL}
-            <Facebook size={22} aria-hidden="true" />
-          </a>
+      <div className="socialLinks">
 
-          <a
-            href={LINKEDIN_URL}
-            target="_blank"
- " />
-          </a>
-        </div>
+  {FACEBOOK_URL}
+    <Facebook size={22} />
+  </a>
+
+  {LINKEDIN_URL}
+    <Linkedin size={22} />
+  </a>
+
+</div>
       </div>
 
       <div>
@@ -97,10 +107,14 @@ function Footer({ go }) {
         rwilliamsthompson@royaltenterprise.com
           rwilliamsthompson@royaltenterprise.com
         </a>
-
-        {BOOKINGS_URL}
-          Schedule a Consultation
-        </a>
+<a
+  href={BOOKINGS_URL}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="footerBooking"
+>
+  Schedule a Consultation
+</a>
       </div>
 
       <small>
