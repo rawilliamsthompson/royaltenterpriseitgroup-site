@@ -178,23 +178,11 @@ function Footer({ go }) {
         </p>
 
         <div className="socialLinks">
-          <a
-            href={FACEBOOK_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit RoyalT Enterprise IT Group on Facebook"
-            title="Facebook"
-          >
+          {FACEBOOK_URL}
             <Facebook size={20} aria-hidden="true" />
           </a>
 
-          <a
-            href={LINKEDIN_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit RoyalT Enterprise IT Group on LinkedIn"
-            title="LinkedIn"
-          >
+          {LINKEDIN_URL}
             <Linkedin size={20} aria-hidden="true" />
           </a>
         </div>
@@ -215,16 +203,11 @@ function Footer({ go }) {
       <div>
         <p>Georgetown, Texas</p>
 
-        <a "mailto:rwilliamsthompson@royaltenterprise.com">
+        <a href="mailto:rwilliamsthompson@royaltenterprise.com">
           rwilliamsthompson@royaltenterprise.com
         </a>
 
-        <a
-          href={BOOKINGS_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="footerBooking"
-        >
+        {BOOKINGS_URL}
           Schedule a Consultation
         </a>
       </div>
@@ -235,4 +218,5 @@ function Footer({ go }) {
     </footer>
   );
 }
+
 createRoot(document.getElementById("root")).render(<App />);
