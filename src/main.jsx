@@ -180,11 +180,10 @@ function Footer({ go }) {
         <div className="socialLinks">
           {FACEBOOK_URL}
             <Facebook size={20} aria-hidden="true" />
-          </a>
+        </div>
 
           {LINKEDIN_URL}
             <Linkedin size={20} aria-hidden="true" />
-          </a>
         </div>
       </div>
 
