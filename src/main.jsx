@@ -25,8 +25,6 @@ const LINKEDIN_URL =
 
 const FACEBOOK_URL =
   'https://www.facebook.com/people/RoyalT-Enterprise';
-
-</div>;
 const services=[
  {icon:BriefcaseBusiness,title:'Fractional CIO Services',kicker:'Executive Technology Leadership',summary:'Strategic direction, governance, financial oversight, and executive guidance without the cost of a full-time CIO.',items:['Technology roadmaps','IT budgeting and governance','Vendor oversight','Executive reporting']},
  {icon:Cloud,title:'Microsoft 365 Management',kicker:'Secure Cloud Productivity',summary:'Administration, governance, optimization, and support for a secure and usable Microsoft 365 environment.',items:['Entra ID administration','Exchange Online','SharePoint and OneDrive','License optimization']},
