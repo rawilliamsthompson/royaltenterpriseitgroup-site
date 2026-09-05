@@ -14,21 +14,16 @@ import {
   Facebook,
   Linkedin
 } from 'lucide-react';
-
 import './styles.css';
-
 const BOOKINGS_URL =
   "https:" +
   "//bookings.cloud.microsoft/bookwithme/user/ec1652782463412ea71cfe0795708149%40royaltenterprise.com?anonymous&ismsaljsauthenabled";
-
 const LINKEDIN_URL =
   "https:" +
   "//www.linkedin.com/company/royalt-enterprise-it-group";
-
 const FACEBOOK_URL =
   "https:" +
   "//www.facebook.com/people/RoyalT-Enterprise";
-
 const services = [
  {icon:BriefcaseBusiness,title:'Fractional CIO Services',kicker:'Executive Technology Leadership',summary:'Strategic direction, governance, financial oversight, and executive guidance without the cost of a full-time CIO.',items:['Technology roadmaps','IT budgeting and governance','Vendor oversight','Executive reporting']},
  {icon:Cloud,title:'Microsoft 365 Management',kicker:'Secure Cloud Productivity',summary:'Administration, governance, optimization, and support for a secure and usable Microsoft 365 environment.',items:['Entra ID administration','Exchange Online','SharePoint and OneDrive','License optimization']},
@@ -81,7 +76,7 @@ function Contact({ booking }) {
 
           <b>Email</b>
 
-          <a href="mailto:rwilliamsthompson@royaltenterprise.com">
+          <a "mailto:rwilliamsthompson@royaltenterprise.com">
             rwilliamsthompson@royaltenterprise.com
           </a>
 
