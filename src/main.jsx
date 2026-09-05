@@ -17,13 +17,14 @@ import {
 
 import './styles.css';
 
-const go = (p) => {
+const BOOKINGS_URL =
+  "https://bookings.cloud.microsoft/bookwithme/user/ec1652782463412ea71cfe0795708149%40royaltenterprise.com?anonymous&ismsaljsauthenabled";
 
 const LINKEDIN_URL =
-  'https://www.linkedin.com/company/royalt-enterprise-it-group';
+  "https://www.linkedin.com/company/royalt-enterprise-it-group";
 
 const FACEBOOK_URL =
-  'https://www.facebook.com/people/RoyalT-Enterprise';
+  "https://www.facebook.com/people/RoyalT-Enterprise";
 
 const services = [
  {icon:BriefcaseBusiness,title:'Fractional CIO Services',kicker:'Executive Technology Leadership',summary:'Strategic direction, governance, financial oversight, and executive guidance without the cost of a full-time CIO.',items:['Technology roadmaps','IT budgeting and governance','Vendor oversight','Executive reporting']},
@@ -58,7 +59,6 @@ function Resources({go}){return <><PageHero k="Client Resources" t="Practical to
 function Insights(){return <><PageHero k="Insights" t="Through Fractional CIO services and trusted advisory support, Royal partners with business leaders to develop scalable technology strategies, manage vendor relationships, optimize workforce technology platforms, and establish effective governance practices that support sustainable growth."/><section className="section"><div className="grid">{[['Identity & Access','Why individual accounts and MFA matter'],['Technology Governance','When growing businesses need Fractional CIO leadership'],['Microsoft 365','Turning Microsoft 365 into a governed platform']].map(x=><article className="card" key={x[1]}><small>{x[0]}</small><h3>{x[1]}</h3><p>Executive guidance designed to connect technology decisions with security, accountability, and business outcomes.</p></article>)}</div></section></>}
 function Contact({booking}){const [sent,setSent]=useState(false);return <><PageHero k="Contact RoyalT" t="Let’s strengthen your technology strategy."/><section className="contact"><aside><h2>Start a conversation.</h2><p>The first step is understanding your organization, priorities, and desired outcome.</p><b>Email</b><a
   href="mailto:rwilliamsthompson@royaltenterprise.com"
->
   rwilliamsthompson@royaltenterprise.com
 </a><b>Service Area</b><p>Georgetown, Texas and remote engagements</p><button className="gold" onClick={booking}>Book a Consultation</button></aside>{sent?<div className="form"><h2>Thank you for contacting RoyalT.</h2><p>This demo confirms the form experience. Connect the production form to Power Automate or an approved secure form service.</p></div>:<form className="form" onSubmit={e=>{e.preventDefault();setSent(true)}}><h2>Consultation request</h2>{['Full name','Organization','Business email','Phone'].map(x=><label key={x}>{x}<input required type={x.includes('email')?'email':'text'}/></label>)}<label>Service interest<select required><option value="">Select a service</option>{services.map(x=><option key={x.title}>{x.title}</option>)}</select></label><label>How can we help?<textarea required rows="5"/></label><button className="primary">Submit Consultation Request</button><small>Prototype form. Connect a secure form processor before launch.</small></form>}</section></>}
 function PageHero({k,t}){return <section className="pageHero"><span className="eyebrow">{k}</span><h1>{t}</h1><p>RoyalT Enterprise IT Group provides practical, business-focused technology guidance for growing organizations.</p></section>}
