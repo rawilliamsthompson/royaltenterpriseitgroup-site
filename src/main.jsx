@@ -76,9 +76,9 @@ function Contact({ booking }) {
 
           <b>Email</b>
 
-          <a "mailto:rwilliamsthompson@royaltenterprise.com">
-            rwilliamsthompson@royaltenterprise.com
-          </a>
+          <a href="mailto:rwilliamsthompson@royaltenterprise.com">
+  rwilliamsthompson@royaltenterprise.com
+</a>
 
           <b>Service Area</b>
 
@@ -235,4 +235,4 @@ function Footer({ go }) {
     </footer>
   );
 }
-}createRoot(document.getElementById("root")).render(<App />);
+createRoot(document.getElementById("root")).render(<App />);
