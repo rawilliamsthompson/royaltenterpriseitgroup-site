@@ -3,7 +3,7 @@ import {createRoot} from 'react-dom/client';
 import {Menu, X, ArrowRight, CheckCircle2, ShieldCheck, BriefcaseBusiness, Cloud, Users, Laptop, FileCheck2, Facebook, Linkedin} from 'lucide-react';
 import './styles.css';
 
-const BOOKINGS_URL='https://outlook.office.com/bookings/'; // Replace with your published Microsoft Bookings URL
+const BOOKINGS_URL='https://outlook.office.com/bookings/'; // https://outlook.office.com/bookwithme/user/ec1652782463412ea71cfe0795708149@royaltenterprise.com?anonymous&ismsaljsauthenabled&ep=plink
 const FACEBOOK_URL='https://www.facebook.com/people/RoyalT-Enterprise/61592690595304/';
 const LINKEDIN_URL='https://www.linkedin.com/company/royalt-enterprise-it-group/';
 const services=[
