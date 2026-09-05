@@ -81,83 +81,38 @@ function Footer({ go }) {
 
   https://www.linkedin.com/company/royalt-enterprise-it-group
     <Linkedin size={20} />
-18
 </a>
-19
 </div>
-20
 </div>
-21
- 
-22
 <div>
-23
 {[
-24
 "About",
-25
 "Services",
-26
 "Industries",
-27
 "Resources",
-28
 "Contact"
-29
 ].map((item) => (
-30
 <button
-31
 key={item}
-32
 onClick={() => go(item)}
-33
 >
-34
 {item}
-35
 </button>
-36
 ))}
-37
 </div>
-38
- 
-39
 <div>
-40
 <p>Georgetown, Texas</p>
-41
- 
-42
 <a href="mailto:rwilliamsthompson@royaltenterprise.com">
-43
 rwilliamsthompson@royaltenterprise.com
-44
 </a>
-45
- 
-46
 {BOOKINGS_URL}
-47
 Schedule a Consultation
-48
 </a>
-49
 </div>
-50
- 
-51
 <small>
-52
 © 2026 RoyalT Enterprise IT Group, LLC.
-53
 All rights reserved.
-54
 </small>
-55
 </footer>
-56
 );
-57
 }createRoot(document.getElementById('root')).render(<App/>);
