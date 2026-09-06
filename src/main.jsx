@@ -30,8 +30,63 @@ function About({booking}){return <><PageHero k="About RoyalT" t="Technology lead
 function Services({booking}){return <><PageHero k="Services" t="Strategic leadership and disciplined technology operations."/><ServiceGrid booking={booking}/><CTA booking={booking}/></>}
 function Industries({booking}){let data=[['Healthcare & Healthcare Administration','Governance for sensitive information, distributed teams, EHR access, payer portals, and workforce lifecycle processes.'],['Professional Services','Secure collaboration, onboarding, vendor oversight, and technology planning.'],['Growing Businesses','Fractional leadership for organizations that have outgrown informal IT decisions.'],['Mission-Driven Organizations','Practical governance, budgeting, security, and productivity guidance.']];return <><PageHero k="Industries" t="Technology guidance shaped by operational realities."/><section className="section"><div className="grid industries">{data.map((x,i)=><article className="card" key={x[0]}><small>0{i+1}</small><h3>{x[0]}</h3><p>{x[1]}</p></article>)}</div></section><CTA booking={booking}/></>}
 function Resources({go}){return <><PageHero k="Client Resources" t="Practical tools for stronger technology decisions."/><section className="section"><div className="grid">{['Technology Readiness Checklist','New User Access Planning Guide','IT Risk Discussion Guide'].map(x=><article className="card" key={x}><small>RESOURCE</small><h3>{x}</h3><p>Request this resource to begin a structured conversation about technology risk, ownership, and priorities.</p><button onClick={()=>go('Contact')}>Request resource <ArrowRight size={17}/></button></article>)}</div></section></>}
-function Insights({go}){return <><PageHero k="Insights" t="Better technology decisions start with better questions."/><section className="section"><p className="intro">Practical perspectives for leaders who need to prioritize investments, manage risk, and make technology accountable to the business.</p><div className="grid">{[['Priorities & Planning','How to turn competing technology requests into a focused executive roadmap.','DECISION MAKING'],['Technology Investment','What leaders should review before approving a major IT purchase or renewal.','LEADERSHIP'],['Accountability & Governance','How clear ownership and recurring reporting improve technology outcomes.','GOVERNANCE']].map(x=><article className="card" key={x[1]}><small>{x[2]}</small><h3>{x[0]}</h3><p>{x[1]}</p><button type="button" onClick={()=>go('Contact')}>Read the perspective <ArrowRight size={17}/></button></article>)}</div></section></>}
-function Contact({booking}){
+function Insights() {
+  const insights = [
+    {
+      category: "DECISION MAKING",
+      title: "Priorities & Planning",
+      summary:
+        "How to turn competing technology requests into a focused executive roadmap.",
+      benefit:
+        "A clear roadmap helps a growing business focus limited time and budget on the technology improvements that support its most important goals.",
+    },
+    {
+      category: "LEADERSHIP",
+      title: "Technology Investment",
+      summary:
+        "What leaders should review before approving a major IT purchase or renewal.",
+      benefit:
+        "A thoughtful review reduces unnecessary spending, improves vendor decisions, and helps each investment scale with the business instead of creating avoidable costs.",
+    },
+    {
+      category: "GOVERNANCE",
+      title: "Accountability & Governance",
+      summary:
+        "How clear ownership and recurring reporting improve technology outcomes.",
+      benefit:
+        "Defined ownership and regular reporting help leaders spot risks earlier, keep work moving, and build reliable technology operations as the organization grows.",
+    },
+  ];
+
+  return (
+    <>
+      <PageHero
+        k="Insights"
+        t="Better technology decisions start with better questions."
+      />
+
+      <section className="section">
+        <p className="intro">
+          Practical perspectives for leaders who need to prioritize investments,
+          manage risk, and make technology accountable to the business.
+        </p>
+
+        <div className="grid">
+          {insights.map((insight) => (
+            <article className="card" key={insight.title}>
+              <small>{insight.category}</small>
+              <h3>{insight.title}</h3>
+              <p>{insight.summary}</p>
+              <p>
+                <strong>Why it matters:</strong> {insight.benefit}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}function Contact({booking}){
  const [sent,setSent]=useState(false);
  const [submitting,setSubmitting]=useState(false);
  const [error,setError]=useState('');
