@@ -29,8 +29,111 @@ function ServiceGrid({booking}){return <section className="section"><span classN
 function About({booking}){return <><PageHero k="About RoyalT" t="Technology leadership grounded in business reality."/><section className="section two"><div><h2>Make technology clearer, safer, and more valuable.</h2><p>RoyalT helps leadership establish direction, define accountability, strengthen controls, and build repeatable technology operations.</p></div><div className="panel"><span className="eyebrow">Founder & Principal</span><h2>Royal Williams-Thompson</h2><p>Business-focused technology leadership connecting executive priorities with disciplined technical execution.</p><button className="gold" onClick={booking}>Connect with RoyalT</button></div></section></>}
 function Services({booking}){return <><PageHero k="Services" t="Strategic leadership and disciplined technology operations."/><ServiceGrid booking={booking}/><CTA booking={booking}/></>}
 function Industries({booking}){let data=[['Healthcare & Healthcare Administration','Governance for sensitive information, distributed teams, EHR access, payer portals, and workforce lifecycle processes.'],['Professional Services','Secure collaboration, onboarding, vendor oversight, and technology planning.'],['Growing Businesses','Fractional leadership for organizations that have outgrown informal IT decisions.'],['Mission-Driven Organizations','Practical governance, budgeting, security, and productivity guidance.']];return <><PageHero k="Industries" t="Technology guidance shaped by operational realities."/><section className="section"><div className="grid industries">{data.map((x,i)=><article className="card" key={x[0]}><small>0{i+1}</small><h3>{x[0]}</h3><p>{x[1]}</p></article>)}</div></section><CTA booking={booking}/></>}
-function Resources({go}){return <><PageHero k="Client Resources" t="Practical tools for stronger technology decisions."/><section className="section"><div className="grid">{['Technology Readiness Checklist','New User Access Planning Guide','IT Risk Discussion Guide'].map(x=><article className="card" key={x}><small>RESOURCE</small><h3>{x}</h3><p>Request this resource to begin a structured conversation about technology risk, ownership, and priorities.</p><button onClick={()=>go('Contact')}>Request resource <ArrowRight size={17}/></button></article>)}</div></section></>}
-function Insights() {
+function Resources() {
+  const resources = [
+    {
+      title: "Technology Readiness Checklist",
+      description:
+        "A practical review of people, processes, systems, and risks to help identify technology priorities.",
+      filename: "technology-readiness-checklist.txt",
+      content: `ROYALT ENTERPRISE IT GROUP
+TECHNOLOGY READINESS CHECKLIST
+
+[ ] Business goals are connected to technology priorities.
+[ ] Critical applications have accountable owners.
+[ ] User accounts use individual sign-in and multifactor authentication.
+[ ] Former employees and unused accounts are removed promptly.
+[ ] Devices are inventoried, updated, encrypted, and protected.
+[ ] Important data is backed up and recovery is tested.
+[ ] Vendors, renewals, and technology spending are reviewed regularly.
+[ ] Technology risks are reported to leadership with clear next actions.`,
+    },
+    {
+      title: "New User Access Planning Guide",
+      description:
+        "A repeatable checklist for onboarding users, assigning access, and protecting business information.",
+      filename: "new-user-access-planning-guide.txt",
+      content: `ROYALT ENTERPRISE IT GROUP
+NEW USER ACCESS PLANNING GUIDE
+
+Before the start date:
+- Confirm the user role, manager, location, and start date.
+- List the systems and data required for the role.
+- Confirm approval for sensitive access.
+
+On the start date:
+- Create an individual account.
+- Require multifactor authentication.
+- Issue only approved role-based access.
+- Record devices, applications, and licenses assigned.
+
+After onboarding:
+- Confirm access is appropriate.
+- Document exceptions and expiration dates.
+- Review access after role changes.`,
+    },
+    {
+      title: "IT Risk Discussion Guide",
+      description:
+        "Questions leaders can use to discuss security, continuity, vendors, and accountability.",
+      filename: "it-risk-discussion-guide.txt",
+      content: `ROYALT ENTERPRISE IT GROUP
+IT RISK DISCUSSION GUIDE
+
+Security:
+- What information would cause the greatest harm if exposed?
+- Where is multifactor authentication missing?
+- Who reviews security alerts and vulnerabilities?
+
+Continuity:
+- Which systems must be restored first after an outage?
+- When was the last backup recovery test?
+- Who makes decisions during a disruption?
+
+Accountability:
+- Who owns each major technology decision?
+- How are risks, costs, and action items reported?
+- What should improve in the next 90 days?`,
+    },
+  ];
+
+  return (
+    <>
+      <PageHero
+        k="Client Resources"
+        t="Practical guides for stronger technology decisions."
+      />
+
+      <section className="section">
+        <p className="intro">
+          Download these concise guides to help your team organize priorities,
+          improve consistency, and make technology decisions with greater
+          confidence.
+        </p>
+
+        <div className="grid">
+          {resources.map((resource) => (
+            <article className="card" key={resource.title}>
+              <small>DOWNLOADABLE GUIDE</small>
+              <h3>{resource.title}</h3>
+              <p>{resource.description}</p>
+
+              <a
+                className="primary"
+                href={`data:text/plain;charset=utf-8,${encodeURIComponent(
+                  resource.content
+                )}`}
+                download={resource.filename}
+              >
+                Download guide <ArrowRight size={17} />
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}function Insights() {
   const insights = [
     {
       category: "DECISION MAKING",
